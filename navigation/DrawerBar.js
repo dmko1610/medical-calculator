@@ -6,7 +6,7 @@ const DrawerBar = (props) => {
     drawerLabel: "Someshit",
   };
   return (
-    <Button onPress={() => props.navigation.goBack()} title="Go back" />
+    <Button onPress={() => props.navigation.closeDrawer()} title="Go back" />
   );
 };
 
