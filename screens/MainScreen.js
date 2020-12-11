@@ -1,26 +1,30 @@
 import React from "react";
-import { Button, Text, View } from "react-native";
+import { Button, StatusBar, View } from "react-native";
 
 const MainScreen = (props) => {
   return (
     <>
-      <Text>Something</Text>
-      <Button title="Button" onPress={() => props.navigation.openDrawer()} />
+      <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          margin: 5,
+        }}>
+        <Button
+          title="Infusomat"
+          onPress={() => props.navigation.navigate("Infusomat")}
+          style={{ flex: 1, height: 50 }}
+        />
+        <Button
+          title="Injection"
+          onPress={() => props.navigation.navigate("Injection")}
+          // style={{ flex: 1, height: 50, width: 100, margin: 20 }}
+        />
+      </View>
     </>
   );
-};
-
-MainScreen.navigationOptions = (navData) => {
-  return {
-    headerTitle: "Somescreen",
-    headerLeft: (
-      <Button
-        onPress={() => navData.navigation.toggleDrawer()}
-        title="D"
-        color="#fff"
-      />
-    ),
-  };
 };
 
 export default MainScreen;
